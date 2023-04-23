@@ -1,0 +1,132 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<title>Gimnasio</title>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Rancho&effect=outline">
+<link rel="icon" href="images/beautyfoodBlanco.png">
+
+<link rel="canonical"
+	href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+
+
+<link th:href="@{/css/estilos.css}" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+<style>
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+#p1 {
+	font-size: 30pt;
+	font-family: 'Luckiest Guy';
+	color: orange;
+}
+
+@media ( min-width : 768px) {
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+}
+</style>
+
+
+<!-- Custom styles for this template -->
+<link href="CSS/carousel.css" rel="stylesheet">
+</head>
+<body>
+
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<div class="container-fluid">
+
+
+				<ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+
+
+				</ul>
+				<div class="text-center text-white me-auto">
+					<a href="/index" style="text-decoration: none;"><img
+						class="me-2" th:src="@{/images/images.png}" alt="" width="320"
+						height="75"></a>
+				</div>
+
+
+			</div>
+		</nav>
+	</header>
+
+	
+	<main class="text-center">
+	<div
+		class="container h-100 d-flex justify-content-center align-items-center">
+		<div class="container w-50">
+			<h3 style="text-align: center;">Crear Reserva</h3>
+			<form action="#" th:action="@{/admin/CrearReservaAdmin}"
+				th:object="${reservasAdminForm}" method="post"
+				class="shadow-lg p-4">
+				<table class="table table-primary table-striped">
+					<thead>
+					<tr>
+						<th>Fecha de reserva</th>
+						<th>Usuario</th>
+						<th>Entrenador</th>
+					
+						
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+					<td>	<input type="date" class="form-control" id="inputpass"
+							placeholder="Dni" th:field="*{fechaReserva}"></td>
+					
+							<td>
+							<select name="clientes" th:field="*{email}">
+							<option th:each="usuario:${listaUsuario}" th:value=${usuario.email}
+								th:text=${usuario.email}></option>
+
+						</select>
+							</td>
+							<td><select name="clientes" th:field="*{dni}">
+							<option th:each="entrenador:${listaEntrenadores}" th:value=${entrenador.dni}
+								th:text=${entrenador.nombre}></option>
+
+						</select></td>
+						
+					</tr>
+					</tbody>
+					<tfoot>
+					<tr>
+						<td colspan="3" style="text-align: center;">
+				<hr class="my-4">
+				<button class="w-100 btn btn-dark text-white btn-lg" id="button"
+					type="submit">Crear Reserva</button>
+						</td>
+					</tr>
+					</tfoot>
+				</table>
+				<br> <br>
+				 <a href="/admin/listadoReservas" class="btn btn-outline-dark">Volver</a>
+			</form>
+		</div>
+	</div>
+		
+		<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+		<footer class="container">
+
+			<p class="mb-1">&copy; 2022–2023 Gimnasio</p>
+		</footer>
+
+	</main>
+</body>
+</html>

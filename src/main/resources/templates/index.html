@@ -1,0 +1,189 @@
+<html xmlns:th="https://www.thymeleaf.org" > 
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Gimnasio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=outline">
+<link rel="icon" href="images/beautyfoodBlanco.png">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+
+  <link rel="stylesheet" href="/webjars/bootstrap/5.0.2/css/bootstrap.min.css">
+  <script src="/webjars/bootstrap/5.0.2/js/bootstrap.min.js"></script>
+<link th:href="@{/css/estilos.css}" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      #p1 {
+      font-size: 30pt;
+      font-family: 'Luckiest Guy';
+      color:orange;
+
+    }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      body{
+      	background-color:#888888;
+      }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/carousel.css}" rel="stylesheet">
+  </head>
+  <body >
+
+   <header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+
+
+        <ul  class="navbar-nav me-auto mb-2 mb-md-0">
+      
+       <li ><a href="/Login" class="custom-btn2 btn2 text-center">Login</a></li>
+       <li ><a href="/Registro" class="custom-btn2 btn2 text-center">Registro</a></li>
+       </ul>
+      
+        <div class="text-center text-white me-auto"><a  href="/index" style="text-decoration: none;"><img class="me-2" th:src="@{/images/images.png}" alt="" width="320" height="75"></a></div>
+      
+     
+      </div>
+  </nav>
+</header>
+<main class="text-center">
+
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  
+
+    <!-- Three columns of text below the carousel -->
+    <!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <br>
+    <br>
+       <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" >
+ 
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="20000">
+     <img th:src="@{/images/gimnasio.png} "  class="d-block " width="auto" height="auto">
+     <div class="carousel-caption d-none d-md-block">
+        <h2 class="text-warning">MUCHO MÁS QUE UN GIMNASIO</h2>
+        <h3 class="text-warning">Descubre todo lo que te podemos ofrecer… ¡y exprímelo al máximo!</h3>
+      </div>
+    </div>  
+  </div>
+ 
+</div>
+
+
+<div style="background-color: #EDEDED">
+<div class="container" >
+  <h2 class="font_7" style="text-align: center;">
+  <span style="font-size:32pt; color: red;">
+  <strong>¡INSCRÍBETE YA!</strong><strong>
+
+¡empezarás a sentirte bien!</strong>
+  </span>
+  </h2>
+  <p class="font_7" style="text-align: left;font-size:20pt;">Un compromiso que adquirimos contigo para que cumplir tus objetivos sea más fácil que nunca.
+
+Apóyate en nuestro personal y descubre las herramientas y servicios que ponemos
+a tu disposición para acompañarte en la búsqueda de tu mejor versión.</p>
+  <p class="font_7" style="text-align: left; font-size:20pt;">Transforma tu vida, dale al play a los hábitos saludables
+y empieza a sentirte bien.</p>
+  
+</div>
+<hr />
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">¿Donde estamos?</h2>
+        <p class="lead">IES Pío Baroja, C. Tolosa 28041 Madrid</p>
+      </div>
+      <div class="col-md-5">
+      <div class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"><div class="gmap_canvas">
+      	<iframe width="500" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=ies%20pio%20baroja&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+      	<br><style>.mapouter{position:relative;text-align:right;height:500px;width:500px;}</style><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
+        
+
+      </div>
+    </div>
+    <br>
+    <br>
+    <hr />
+<div class="wpb_wrapper"><div style="text-align: center;"><span style="text-align: center;"><span style="font-family: Avenir Black;"><h1>CONTACTO</h1></span></span></div>
+</div><div class="wpb_text_column titulo-seccion"><div class="wpb_wrapper"><div style="text-align: center;">
+
+</div>
+</div></div><div class="wpb_text_column us_custom_fb13c571"><div class="wpb_wrapper"><p style="text-align: center;">Si tienes cualquier pregunta o sugerencia, no dudes en contactar con nosotros a través<br />
+de nuestras vías de contacto.</p>
+</div></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+<div class="xyth">
+<div >
+<h3 class="title" style="color:black;"><span class="glyphicon glyphicon-time" style="color: #e1523d;"></span> Telefono:</h3>
+</div>
+</div>
+<p class="cntct">Telefono: 9827465284</p>
+<p>Whatsapp: 672393242</p>
+<div class="xyth">
+<div >
+<h3 class="title" style="color:black;"><span class="glyphicon glyphicon-time" style="color: #e1523d;"></span> Horario:</h3>
+</div>
+</div>
+
+
+<p class="cntct">Lunes a viernes : 7:30 a 22:30</p>
+<p class="cntct">Sábado : 9:00 a 20:00</p>
+<p class="cntct">Domingo y festivos : 10:00 a 15:00</p></div>
+    <hr class="featurette-divider">
+
+    
+
+    <hr class="featurette-divider">
+
+
+
+ <!-- /.container -->
+
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+
+    <p class="mb-1">&copy; 2022–2023 Gimnasio</p>
+  </footer>
+</main>
+
+    <script  th:href="@{/js/bootstrap.bundle.min.js}"></script>
+
+
+  
+
+
+  </body>
+</html>

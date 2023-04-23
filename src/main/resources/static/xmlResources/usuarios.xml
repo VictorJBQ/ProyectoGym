@@ -1,0 +1,20 @@
+<usuarios>
+    <usuario>
+        <nombre>pedro</nombre>
+        <apellido>pedro</apellido>
+        <email>pedro@gmail.com</email>
+        <password>pedro1234</password>
+    </usuario>
+    <usuario>
+        <nombre>luis</nombre>
+        <apellido>luis</apellido>
+        <email>luis@gmail.com</email>
+        <password>luis123</password>
+    </usuario>
+    <usuario>
+        <nombre>anuel</nombre>
+        <apellido>anuel</apellido>
+        <email>anuel@gmail.com</email>
+        <password>anuel23</password>
+    </usuario>
+</usuarios>

@@ -1,0 +1,141 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Gimnasio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=outline">
+<link rel="icon" href="images/beautyfoodBlanco.png">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+
+
+<link th:href="@{/css/estilos.css}" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      #p1 {
+      font-size: 30pt;
+      font-family: 'Luckiest Guy';
+      color:orange;
+
+    }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="CSS/carousel.css" rel="stylesheet">
+  </head>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<div class="container-fluid">
+
+
+				<ul style="line-height: 1.5em;"
+					class="navbar-nav me-auto mb-2 mb-md-0">
+					<li class="nav-item">
+						<form action="#" th:action="@{/usuario/perfilUsuario}"
+							th:object="${sessionForm}" method="post">
+							<input type="hidden" value="salir" th:attr="name='desconecta'" />
+							<button class="custom-btn2 btn2 text-center" type="submit">Salir</button>
+						</form>
+					</li>
+					<li><a href="/usuario/CrearReservaUsu"
+						class="custom-btn2 btn2 text-center">Hacer Reserva</a></li>
+
+
+				</ul>
+				<div class="text-center text-white me-auto">
+					<img class="me-2" th:src="@{/images/images.png}" alt="" width="320"
+						height="75">
+				</div>
+
+
+			</div>
+		</nav>
+	</header>
+	<br>
+<br>
+
+<br><br><br>
+	<main class="text-center">
+		<div class="container mt-3" th:each="usuario:${usuario}">
+			<h3 th:text="'Usuario '+${usuario.email}"></h3>
+			<h2 th:text=${nuevo} class="text-success"></h2>
+			<table class="table table-primary table-striped">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th colspan="2">Email</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr>
+						<td th:text="${usuario.nombre}+' '+ ${usuario.apellido}"></td>
+						<td th:text="${usuario.email}"></td>
+
+
+					</tr>
+
+				</tbody>
+			</table>
+
+
+		</div>
+	<div class="container mt-3">
+			<h3>Lista de Reservas</h3>
+
+			<h2 th:text=${nuevo} class="text-success"></h2>
+			<table class="table table-primary table-striped">
+				<thead>
+					<tr>
+						<th>Id Reserva</th>
+						<th>fecha Realizada</th>
+						<th>fecha Reserva</th>
+						<th>Dni Entrenador</th>
+					</tr>
+				</thead>
+				<tbody>
+
+					<tr th:each="reserva:${listaReserva}">
+						<td th:text="${reserva.id}"></td>
+						<td th:text="${reserva.fechaRealizada}"></td>
+						<td th:text="${reserva.fechaReserva}"></td>
+						<td
+							th:text="${reserva.entrenador?.dni} +' - '+   ${reserva.entrenador?.nombre}"></td>
+
+					</tr>
+
+				</tbody>
+			</table>
+
+			<br> 
+		</div>
+		<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+		<footer class="container">
+
+			<p class="mb-1">&copy; 2022–2023 Gimnasio</p>
+		</footer>
+
+	</main>
+</body>
+</html>

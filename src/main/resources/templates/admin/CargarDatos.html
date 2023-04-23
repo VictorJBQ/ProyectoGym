@@ -1,0 +1,130 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<title>Gimnasio</title>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Rancho&effect=outline">
+<link rel="icon" href="images/beautyfoodBlanco.png">
+
+<link rel="canonical"
+	href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+
+
+<link th:href="@{/css/estilos.css}" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+<style>
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+#p1 {
+	font-size: 30pt;
+	font-family: 'Luckiest Guy';
+	color: orange;
+}
+
+@media ( min-width : 768px) {
+	.bd-placeholder-img-lg {
+		font-size: 3.5rem;
+	}
+}
+</style>
+
+
+<!-- Custom styles for this template -->
+<link href="CSS/carousel.css" rel="stylesheet">
+</head>
+<body>
+
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<div class="container-fluid">
+
+
+				<ul style="line-height: 1.5em;"
+					class="navbar-nav me-auto mb-2 mb-md-0">
+					<li class="nav-item">
+						<form action="#" th:action="@{/admin/listadoUsuarios}"
+							th:object="${sessionForm}" method="post">
+							<input type="hidden" value="salir" th:attr="name='desconecta'" />
+							<button class="custom-btn2 btn2 text-center" type="submit">Salir</button>
+						</form>
+					</li>
+					<li><a href="/admin/listadoUsuarios"
+						class="custom-btn2 btn2 text-center">Usuarios</a></li>
+					<li><a href="/admin/listadoReservas"
+						class="custom-btn2 btn2 text-center">Reservas</a></li>
+					<li><a href="/admin/listadoEntrenadores"
+						class="custom-btn2 btn2 text-center">Entrenadores</a></li>
+					<li><a href="/admin/CargarDatos"
+						class="custom-btn2 btn2 text-center">Cargar Datos</a></li>
+					<li><a href="/admin/DescargarDatosJson"
+						class="custom-btn2 btn2 text-center">Descargar Datos</a></li>
+
+
+
+				</ul>
+				<div class="text-center text-white me-auto">
+					<img class="me-2" th:src="@{/images/images.png}" alt="" width="320"
+						height="75">
+				</div>
+
+
+			</div>
+		</nav>
+	</header>
+	<br>
+	<br>
+
+	<br>
+	<br>
+	<br>
+	<main class="text-center">
+		<div class="container mt-3">
+			<div class="card bg-light" style="background-color: #efefef">
+
+				<h2 class="card-title mt-3 text-center">Cargar datos</h2>
+				<h3 class="text-success" th:text=${mensaje}></h3>
+				<p class="text-center text-danger">Selecciona que Tabla vas a
+					subir</p>
+
+
+				<form th:action="@{/admin/CargarDatos}" method="post"
+					enctype='multipart/form-data'>
+					<select name="eleccion">
+						<option value="Entrenador">Entrenador</option>
+						<option value="Reservas" selected>Reservas</option>
+						<option value="Usuario">Usuario</option>
+					</select> <input type="file" name="file" class="form-control"
+						accept="text/xml" required></input> <br>
+					<div class="card bg-light">
+						<button type="submit" class="btn btn-warning">Cargar</button>
+					</div>
+
+				</form>
+
+
+
+			</div>
+		</div>
+
+		<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+		<footer class="container">
+
+			<p class="mb-1">&copy; 2022–2023 Gimnasio</p>
+		</footer>
+
+	</main>
+</body>
+
+</html>
+

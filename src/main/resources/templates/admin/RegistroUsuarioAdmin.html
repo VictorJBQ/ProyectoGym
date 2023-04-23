@@ -1,0 +1,110 @@
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Gimnasio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=outline">
+<link rel="icon" href="images/beautyfoodBlanco.png">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+
+
+<link th:href="@{/css/estilos.css}" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      #p1 {
+      font-size: 30pt;
+      font-family: 'Luckiest Guy';
+      color:orange;
+
+    }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="CSS/carousel.css" rel="stylesheet">
+  </head>
+  <body >
+
+   <header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+
+
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+      
+       
+
+        </ul>
+        <div class="text-center text-white me-auto"><img class="me-2" th:src="@{/images/images.png}" alt="" width="320" height="75"></div>
+      
+     
+      </div>
+  </nav>
+</header>
+<br>
+<br>
+
+<br><br><br>
+<main class="text-center">
+<div  class="container mt-3 text-center">
+<h2 th:text=${fallo}></h2>
+     <form action="#" th:action="@{/admin/RegistroUsuarioAdmin}"
+				th:object="${registroForm}" method="post" class="shadow-lg p-4" >
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <input type="text" class="form-control" id="inputpass" placeholder="Nombre" th:field="*{nombre}">
+            </div>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" id="inputpass" placeholder="Apellidos" th:field="*{apellido}" >
+            </div>
+         
+            <div class="col-12">
+              <input type="email" class="form-control" id="inputpass" placeholder="Email (you@email.com)" th:field="*{email}" >
+            </div>
+           
+            <div class="col-sm-6">
+              <input type="text" class="form-control" id="inputpass" placeholder="Contraseña (3-30 caracteres)" th:field="*{password}">
+            </div>
+            <div>
+            <select name="Rol" th:field="*{rol}">
+							<option th:each="roles:${listaRoles}" th:value=${roles.rol}
+								th:text=${roles.rol}></option>
+
+						</select></div>
+          
+         
+    
+          </div>
+        <br>
+          <hr class="my-4">
+          <button class="w-100 btn btn-dark text-white btn-lg" id="button" type="submit">Guardar Usuario</button>
+           <a href="/admin/listadoUsuarios" class="btn btn-outline-dark">Volver</a>
+        </form>
+      </div>
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+    
+<footer class="container">
+
+    <p class="mb-1">&copy; 2022–2023 Gimnasio</p>
+  </footer>
+
+</main>
+  </body>
+</html>

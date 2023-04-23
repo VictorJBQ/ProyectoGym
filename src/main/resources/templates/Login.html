@@ -1,0 +1,132 @@
+<html  xmlns:th="https://www.thymeleaf.org" > 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Gimnasio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rancho&effect=outline">
+<link rel="icon" href="images/beautyfoodBlanco.png">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+
+
+<link th:href="@{/css/estilos.css}" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+    <style>
+    html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 500px;
+  padding: 15px;
+  margin: auto;
+}
+
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      #p1 {
+      font-size: 30pt;
+      font-family: 'Luckiest Guy';
+      color:orange;
+
+    }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="CSS/carousel.css" rel="stylesheet">
+  </head>
+  <body >
+
+   <header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+
+
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+      
+       
+
+        </ul>
+        <div class="text-center text-white me-auto"><a  href="/index" style="text-decoration: none;"><img class="me-2" th:src="@{/images/images.png}" alt="" width="320" height="75"></a></div>
+      
+     
+      </div>
+  </nav>
+</header>
+<br>
+<br>
+
+<br><br><br>
+<main class="form-signin text-center">
+<div  class="container mt-3 text-center">
+     <form action="#" th:action="@{/Login}"
+				th:object="${inicioForm}" method="post" class="shadow-lg p-4" >    <img class="mb-1" th:src="@{/images/images.png}" alt="" width="130" height="80">
+          <h1 class="h3 mb-3 fw-normal">INICIAR SESION</h1>
+ 			<h2 class="text-danger" th:text=${Error}></h2>
+          <div class="form-floating">
+         
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" th:field="*{email}">
+            <label for="floatingInput">Correo Electrónico</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password"  th:field="*{contra}">
+            <label for="floatingPassword">Contraseña</label>
+          </div>
+<br>
+          
+          <button class="w-70 btn  btn-primary" id="main_div"type="submit">Iniciar Sesión</button>
+          <br> <br>
+          <p><a href="Registro">¿Aun no eres cliente? Registrate</a></p>
+        </form>
+      </div>
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+    
+<footer class="container">
+
+    <p class="mb-1">&copy; 2022–2023 Gimnasio</p>
+  </footer>
+
+</main>
+  </body>
+</html>
